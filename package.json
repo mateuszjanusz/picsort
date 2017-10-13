@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "exif": "^0.6.0"
+  }
+}
