@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "exif": "^0.6.0"
+    "exif": "^0.6.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.1"
   }
 }
