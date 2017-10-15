@@ -1,7 +1,7 @@
 {
-	"name": "image_organizer",
-	"description": "sort your images",
-	"version": "1.0.0",
+	"name": "Picsort",
+	"description": "Sort your images",
+	"version": "0.1.0",
 	"main": "./lib/index.js",
 	"dependencies": {
 	    "exif": "^0.6.0",
@@ -9,13 +9,13 @@
 	    "moment": "^2.19.1"
 	},
 	"bin": {
-		"hello": "./bin/demo-global.js"
+		"picsort": "./bin/index.js"
 	},
 	"preferGlobal": true,
-	"author": "Mateusz Janusz <mateusz@opteo.com> ",
+	"author": "Mateusz Janusz <mateusz@opteo.com> (https://github.com/mateuszjanusz)",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mateuszjanusz/image_organizer"
+		"url": "https://github.com/mateuszjanusz/picsort"
 	}
 }
