@@ -2,11 +2,10 @@ const fs = require('fs')
 const ExifImage = require('exif').ExifImage
 const moment = require('moment')
 const _ = require('lodash')
-const testFolder = './test_images/'
 
 module.exports = {
 
-	sortImages(directory) {
+	sortImagesByDate(directory) {
 		const _this = this
 
 		const dir = _this.formatDirectoryPath(directory)
@@ -15,8 +14,9 @@ module.exports = {
 			const is_image = _.endsWith(file, 'jpg') || _.endsWith(file, 'png') || _.endsWith(file, 'jpeg')
 			
 			if(is_image){
+				const image_path = dir + file
 				try {
-					new ExifImage({ image : dir + file }, function (error, exifData) {
+					new ExifImage({ image : image_path }, function (error, exifData) {
 				        if (error) console.log(error)
 				        else {
 				        	const exif = exifData.exif
@@ -32,7 +32,8 @@ module.exports = {
 						        const destination = _this.getDestination(dir, year, month)
 
 	    			            console.log("this image would go to: ", destination)
-	    			            _this.copyFile(file, destination)
+
+	    			            _this.moveFile(file, image_path, destination)
 	    			            
 
 				        	} else {
@@ -81,40 +82,24 @@ module.exports = {
 		return month_folder
 	},
 
-	copyFile(file, destination){
+	moveFile(file_name, image_path, destination){
 		destination = this.formatDirectoryPath(destination)
-		destination = destination + file
+		destination = destination + file_name
+		// console.log(image_path, destination)
 
 		if(!fs.existsSync(destination)){
-
+			fs.rename(image_path, destination, function (error) {
+				if(error) console.log(error)
+			})	
 		} else {
-			destination = destination + '_copy'
+			destination = destination + '-'
+			fs.rename(image_path, destination, function (error) {
+				if(error) console.log(error)
+			})	
 		}
 
 	},
-	// function copyFile(source, target, cb) {
-	//   var cbCalled = false;
 
-	//   var rd = fs.createReadStream(source);
-	//   rd.on("error", function(err) {
-	//     done(err);
-	//   });
-	//   var wr = fs.createWriteStream(target);
-	//   wr.on("error", function(err) {
-	//     done(err);
-	//   });
-	//   wr.on("close", function(ex) {
-	//     done();
-	//   });
-	//   rd.pipe(wr);
-
-	//   function done(err) {
-	//     if (!cbCalled) {
-	//       cb(err);
-	//       cbCalled = true;
-	//     }
-	//   }
-	// }
 
 	moveToUnknowns(directory){
 		this.setupDirectory(directory, 'Unknowns')

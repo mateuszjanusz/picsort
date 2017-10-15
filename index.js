@@ -2,4 +2,4 @@ const Sorter = require('./sort')
 
 
 
-Sorter.sortImages('./test_images')
+Sorter.sortImagesByDate('./test_images')
