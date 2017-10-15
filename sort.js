@@ -21,23 +21,19 @@ module.exports = {
 				        else {
 				        	const exif = exifData.exif
 				        	const image_data = exifData.image
-
 				        	const image_timespan = exif.DateTimeOriginal || exif.CreateDate || image_data.ModifyDate
 
 				        	if(image_timespan){
 				        		const date = moment(image_timespan.split(' ')[0], ['YYYY:MM:DD'])
 						        const year = moment(date, ['YYYY:MM:DD']).format('YYYY')
 						        const month = moment(date).format('MMMM')
-
 						        const destination = _this.getDestination(dir, year, month)
 
-	    			            console.log("this image would go to: ", destination)
-
-	    			            _this.moveFile(file, image_path, destination)
-	    			            
+	    			            // console.log("this image would go to: ", destination)
+	    			            _this.moveFile(file, image_path, destination)  
 
 				        	} else {
-				        		_this.moveToUnknowns(dir)
+				        		_this.moveToUnknowns(dir, file)
 				        	}
 					       
 
@@ -64,9 +60,8 @@ module.exports = {
 	},
  
 	setupDirectory(directory, name) {
-		const dir = this.formatDirectoryPath(directory)
-
-		const dir_path = dir + name
+		directory = this.formatDirectoryPath(directory)
+		const dir_path = directory + name
 
 		if(!fs.existsSync(dir_path)){
 			fs.mkdirSync(dir_path)
@@ -85,24 +80,27 @@ module.exports = {
 	moveFile(file_name, image_path, destination){
 		destination = this.formatDirectoryPath(destination)
 		destination = destination + file_name
-		// console.log(image_path, destination)
 
 		if(!fs.existsSync(destination)){
 			fs.rename(image_path, destination, function (error) {
-				if(error) console.log(error)
+				if(error)	
+					console.log(error)
 			})	
 		} else {
-			destination = destination + '-'
+			destination = destination + '-dupe'
 			fs.rename(image_path, destination, function (error) {
-				if(error) console.log(error)
+				if(error) 
+					console.log(error)
 			})	
 		}
 
 	},
 
 
-	moveToUnknowns(directory){
-		this.setupDirectory(directory, 'Unknowns')
+	moveToUnknowns(directory, file_name){
+		const destination = this.setupDirectory(directory, 'Unknowns')
+		const image_path = directory + file_name
+		this.moveFile(file_name, image_path, destination)
 	}
 
 }
