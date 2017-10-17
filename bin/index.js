@@ -3,11 +3,10 @@
 const Picsort = require('../lib/picsort')
 const program = require('commander')
 let source = ''
-let destination = ''
 
 program
 	.version('0.1.0')
-	.description('Organize your photos by date in one click!')
+	.description('Organize your photos by date. Use flags to specify sorting precision.')
 	.usage('[source-path] [destination-path] [option]')
 	.option('-d, --day', 'Organize photos by year/month/day/')
 	.option('-m, --month', 'Organize photos by year/month/ <DEFAULT>')

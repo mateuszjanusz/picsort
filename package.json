@@ -1,8 +1,8 @@
 {
-	"name": "Picsort",
+	"name": "picsort",
 	"description": "Sort your images",
 	"version": "0.1.0",
-	"main": "./lib/index.js",
+	"main": "./lib/picsort.js",
 	"dependencies": {
 		"commander": "^2.11.0",
 		"exif": "^0.6.0",
