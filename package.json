@@ -1,7 +1,7 @@
 {
 	"name": "picsort",
 	"description": "Sort your images",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"main": "./lib/picsort.js",
 	"dependencies": {
 		"commander": "^2.11.0",
