@@ -7,7 +7,7 @@ let source = ''
 program
 	.version('0.1.0')
 	.description('Organize your photos by date. Use flags to specify sorting precision.')
-	.usage('[source-path] [destination-path] [option]')
+	.usage('[source-path] [option]')
 	.option('-d, --day', 'Organize photos by year/month/day/')
 	.option('-m, --month', 'Organize photos by year/month/ <DEFAULT>')
 	.option('-y, --year', 'Organize photos by year/')
