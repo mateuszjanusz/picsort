@@ -1,15 +1,32 @@
 #!/usr/bin/env node
 
-const Picsort = require('../lib/index')
+const Picsort = require('../lib/picsort')
+const program = require('commander')
+let source = ''
+let destination = ''
 
-const user_args = process.argv.slice(2)
+program
+	.version('0.1.0')
+	.description('Organize your photos by date in one click!')
+	.usage('[source-path] [destination-path] [option]')
+	.option('-d, --day', 'Organize photos by year/month/day/')
+	.option('-m, --month', 'Organize photos by year/month/ <DEFAULT>')
+	.option('-y, --year', 'Organize photos by year/')
+	.arguments('<src> [dest]')
+	.action(function (src, dest) {
+		source = src
+		destination = dest
+	})
+	.parse(process.argv)
 
+if (!source) program.help()
 
-if(user_args[0] === '-h'){
-	console.log("instructions here")
+if(program.year){
+	return Picsort.sortImagesByYear(source, destination)
+} else if(program.month){
+	return Picsort.sortImagesByMonth(source, destination)
+} else if(program.day){
+	return Picsort.sortImagesByDay(source, destination)
 } else {
-	const path_to_images = user_args[0] || '.'
-
-	Picsort.sortImagesByDate(path_to_images)
+	return Picsort.sortImagesByMonth(source, destination)
 }
-

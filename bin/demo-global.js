@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Picsort = require('../lib/index')
+const Picsort = require('../lib/picsort')
 
 // console.log(process.argv)
 
