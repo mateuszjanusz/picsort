@@ -9,7 +9,7 @@ It uses [node-exif](https://github.com/gomfunkel/node-exif) to extract the creat
 
 
 ## Install
-Remember to install the package globally. <br><br>
+Remember to install the package globally. 🌎 <br><br>
 If you are using npm, add `-g`
 
 ```
@@ -36,7 +36,7 @@ $ picsort --help
 ```
 
 ## Options
-Picsort will sort your photos in year/month order by default. However, you can specify sorting precision by adding a flag. <br>
+Picsort will sort your photos in Year/Month order by default. However, you can specify sorting precision by adding a flag. <br>
 
 Use flag `-d` to sort photos by **Year/Month/Day/**. <br>
 ```
