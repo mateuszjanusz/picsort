@@ -12,21 +12,20 @@ program
 	.option('-d, --day', 'Organize photos by year/month/day/')
 	.option('-m, --month', 'Organize photos by year/month/ <DEFAULT>')
 	.option('-y, --year', 'Organize photos by year/')
-	.arguments('<src> [dest]')
-	.action(function (src, dest) {
+	.arguments('<src>')
+	.action(function (src) {
 		source = src
-		destination = dest
 	})
 	.parse(process.argv)
 
 if (!source) program.help()
 
 if(program.year){
-	return Picsort.sortImagesByYear(source, destination)
+	return Picsort.sortImagesByYear(source)
 } else if(program.month){
-	return Picsort.sortImagesByMonth(source, destination)
+	return Picsort.sortImagesByMonth(source)
 } else if(program.day){
-	return Picsort.sortImagesByDay(source, destination)
+	return Picsort.sortImagesByDay(source)
 } else {
-	return Picsort.sortImagesByMonth(source, destination)
+	return Picsort.sortImagesByMonth(source)
 }
