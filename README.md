@@ -1,4 +1,7 @@
 # picsort 📸
+![](https://travis-ci.org/mateuszjanusz/picsort.svg?branch=master)
+
+
 Organize JPG/JPEG photos into folders by date through the command line. 
 
 
