@@ -9,4 +9,4 @@ console.log(user_args)
 
 const path_to_images = user_args[0] || '.'
 
-Picsort.sortImagesByDate(path_to_images)
+Picsort.sortImagesByMonth(path_to_images)
