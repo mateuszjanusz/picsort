@@ -12,7 +12,7 @@ It uses [node-exif](https://github.com/gomfunkel/node-exif) to extract the creat
 
 
 ## Install
-Remember to install the package globally. 🌎 <br><br>
+Remember to install the package globally 🌎 <br><br>
 If you are using npm, add `-g`
 
 ```
