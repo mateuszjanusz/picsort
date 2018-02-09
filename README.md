@@ -4,12 +4,10 @@
 
 Organize JPG/JPEG photos into folders by date through the command line. 
 
-
-It uses [node-exif](https://github.com/gomfunkel/node-exif) to extract the created date from an image. If the exif data is not available, picsort will try to extract the created date from the filename, otherwise it will remain in the original location.
-
 ## Demo
 ![](https://github.com/mateuszjanusz/picsort/blob/master/picsort_demo.gif)
 
+It uses [node-exif](https://github.com/gomfunkel/node-exif) to extract the created date from an image. If the exif data is not available, picsort will try to extract the created date from the filename, otherwise it will remain in the original location.
 
 ## Install
 Remember to install the package globally 🌎 <br><br>
