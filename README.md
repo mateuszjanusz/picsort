@@ -61,4 +61,4 @@ $ picsort [path] -y
 
 [MIT License](https://github.com/mateuszjanusz/picsort/blob/master/LICENSE.md)
 
-Copyright (c) 2017 Mateusz Janusz
+Mateusz Janusz, 2017. 
