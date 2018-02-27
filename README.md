@@ -2,7 +2,7 @@
 ![](https://travis-ci.org/mateuszjanusz/picsort.svg?branch=master)
 
 
-Organize JPG/JPEG photos into folders by date through the command line. 
+Organize your photos into folders by date through the command line. 
 
 ## Demo
 ![](https://github.com/mateuszjanusz/picsort/blob/master/picsort_demo.gif)
@@ -55,9 +55,9 @@ $ picsort [path] -y
 ````
 
 ## Changelog
-- **17/10/17** version 0.1.0 released.
-- **25/02/18** getting file's created date also using fs module now.
-
+- **17/10/17** version 0.1.0 released,
+- **25/02/18** getting file's created date also using fs module now,
+- **26/02/18** v1 released 🚀
 
 ## License
 
