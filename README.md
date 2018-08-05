@@ -56,7 +56,7 @@ $ picsort [path] -y
 
 ## Changelog
 - **17/10/17** version 0.1.0 released,
-- **25/02/18** getting file's created date also using fs module now,
+- **25/02/18** using fs module to get file's created date,
 - **26/02/18** v1 released 🚀
 
 ## License
