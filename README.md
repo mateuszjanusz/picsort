@@ -1,5 +1,6 @@
 # picsort 📸
 ![](https://travis-ci.org/mateuszjanusz/picsort.svg?branch=master)
+[![](https://img.shields.io/npm/dt/picsort.svg)]()
 
 
 Organize your photos into folders by date through the command line. 
