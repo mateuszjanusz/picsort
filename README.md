@@ -1,5 +1,6 @@
 # picsort 📸
 ![](https://travis-ci.org/mateuszjanusz/picsort.svg?branch=master)
+[![](https://img.shields.io/npm/v/picsort.svg)]()
 [![](https://img.shields.io/npm/dt/picsort.svg)]()
 
 
