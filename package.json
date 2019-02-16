@@ -6,7 +6,7 @@
 	"dependencies": {
 		"commander": "^2.11.0",
 		"exif": "^0.6.0",
-		"lodash": "^4.17.4",
+		"lodash": "^4.17.11",
 		"moment": "^2.19.1"
 	},
 	"devDependencies": {
